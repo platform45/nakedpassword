@@ -1,7 +1,7 @@
 jQuery.fn.nakedPassword = function (options) {
 	return this.each (function () {
 
-		var settings = {path : "images/"}
+		var settings = {path : "images/", width: 30, height: 28}
 		var settings = $.extend(settings, options);
 
 
@@ -95,12 +95,12 @@ jQuery.fn.nakedPassword = function (options) {
 			input_width      = $(this).outerWidth();
 
 			
-			pic_width = (((input_height-6)/28)*30); //30 x 28
+			pic_width = (((input_height-6)/settings.height)*settings.width); //30 x 28
 			pic_height = input_height - 6;
 			
 			properties = {
             position:   'absolute',
-						//display: 'none'
+						display: 'none',
             opacity:     1.0,
             left:       (position.left + input_width - (pic_width+3)),
             top:        (position.top + 3),
