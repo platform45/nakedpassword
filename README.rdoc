@@ -1,1 +1,14 @@
-This is the readme :>
+= Naked Password
+Simple jQuery plugin to improve security on passwords.
+
+== Usage
+
+Naked password is extremely easy to use. All thats needed is for you to attach nakedPassword(); to one or all of your password fields.
+  
+  $("input:password").nakedPassword();
+  
+Naked password assumes that the images are uploaded in a publicly accessible folder called "images/". You can overwrite the images path as follows:
+
+  $("input:password").nakedPassword({path: "/new_image_path/"});
+  
+And thats it! Feel free to fork a copy and push any changes to us, and we'll gladly implement them.
