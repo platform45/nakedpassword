@@ -102,8 +102,8 @@ jQuery.fn.nakedPassword = function (options) {
             position:   'absolute',
 						display: 'none',
             opacity:     1.0,
-            left:       (position.left + input_width - (pic_width+3)),
-            top:        (position.top + 3),
+            left:       (position.left + input_width - (pic_width+3)) + "px",
+            top:        (position.top + 3) + "px",
             margin:     0 + "px",
           }
 
@@ -122,10 +122,11 @@ jQuery.fn.nakedPassword = function (options) {
 			$(this).after("<div id='pic3'><img src='" + settings.path + "3.png' width='" + pic_width + "' height='" + pic_height + "px' /></div>");
 			$(this).after("<div id='pic4'><img src='" + settings.path + "4.png' width='" + pic_width + "' height='" + pic_height + "px' /></div>");
 			
+			
 			for(i = 0; i < 5; i++){
 				$("#pic" + i).css(properties);
 			}
-
+			
 
 			$(this).bind('keyup', trigger).bind('blur', trigger);
 		});
