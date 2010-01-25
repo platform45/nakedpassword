@@ -1,3 +1,11 @@
+/*!
+ * Naked Password Version 0.2.0
+ * http://www.nakedpassword.com
+ *
+ * Copyright 2010, Platform45
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ */
+
 jQuery.fn.nakedPassword = function (options) {
 return this.each (function () {
  
