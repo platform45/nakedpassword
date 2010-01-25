@@ -3,7 +3,7 @@ jQuery.fn.nakedPassword = function (options) {
 
 		var settings = {path : "images/"}
 		var settings = $.extend(settings, options);
-	
+
 
 		var prev_password_level = 0;
 
@@ -65,9 +65,7 @@ jQuery.fn.nakedPassword = function (options) {
 
 			}
 
-			prev_password_level = password_level;
-
-			}//end trigger
+		}//end trigger
 
 			function getPasswordStrength(password){
 				var score   = 0;
@@ -93,19 +91,40 @@ jQuery.fn.nakedPassword = function (options) {
 
 
 			position   = $(this).position();
-			height     = $(this).outerHeight();
-			width      = $(this).outerWidth();
+			input_height     = $(this).outerHeight();
+			input_width      = $(this).outerWidth();
 
-			pic_width = (((height-6)/28)*30);
-			pic_height = height - 6;
 			
+			pic_width = (((input_height-6)/28)*30); //30 x 28
+			pic_height = input_height - 6;
+			
+			properties = {
+            position:   'absolute',
+						//display: 'none'
+            opacity:     1.0,
+            left:       (position.left + input_width - (pic_width+3)),
+            top:        (position.top + 3),
+            margin:     0 + "px",
+          }
+
+					if($.browser.safari){
+            properties.marginTop = 3 + "px";
+          }
+          else{
+            properties.marginTop = 1 + "px";
+          }
 
 
-			$(this).after("<div id='pic0' style='position:absolute; left:" + (position.left + width - (pic_width+3)) + "; top:" + (position.top + 3) + ";'><img src='" + settings.path + "0.png' width='" + pic_width + "' height='" + pic_height + "px' /></div>");
-			$(this).after("<div id='pic1' style='display:none; position:absolute; left:" + (position.left + width - (pic_width+3)) + "; top:" + (position.top + 3) + ";'><img src='" + settings.path + "1.png' width='" + pic_width + "' height='" + pic_height + "px' /></div>");
-			$(this).after("<div id='pic2' style='display:none; position:absolute; left:" + (position.left + width - (pic_width+3)) + "; top:" + (position.top + 3) + ";'><img src='" + settings.path + "2.png' width='" + pic_width + "' height='" + pic_height + "px' /></div>");
-			$(this).after("<div id='pic3' style='display:none; position:absolute; left:" + (position.left + width - (pic_width+3)) + "; top:" + (position.top + 3) + ";'><img src='" + settings.path + "3.png' width='" + pic_width + "' height='" + pic_height + "px' /></div>");
-			$(this).after("<div id='pic4' style='display:none; position:absolute; left:" + (position.left + width - (pic_width+3)) + "; top:" + (position.top + 3) + ";'><img src='" + settings.path + "4.png' width='" + pic_width + "' height='" + pic_height + "px' /></div>");
+
+			$(this).after("<div id='pic0'><img src='" + settings.path + "0.png' width='" + pic_width + "' height='" + pic_height + "px' /></div>");
+			$(this).after("<div id='pic1'><img src='" + settings.path + "1.png' width='" + pic_width + "' height='" + pic_height + "px' /></div>");
+			$(this).after("<div id='pic2'><img src='" + settings.path + "2.png' width='" + pic_width + "' height='" + pic_height + "px' /></div>");
+			$(this).after("<div id='pic3'><img src='" + settings.path + "3.png' width='" + pic_width + "' height='" + pic_height + "px' /></div>");
+			$(this).after("<div id='pic4'><img src='" + settings.path + "4.png' width='" + pic_width + "' height='" + pic_height + "px' /></div>");
+			
+			for(i = 0; i < 5; i++){
+				$("#pic" + i).css(properties);
+			}
 
 
 			$(this).bind('keyup', trigger).bind('blur', trigger);
