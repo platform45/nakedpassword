@@ -22,59 +22,20 @@ if(prev_password_level <= password_level){
 forward = true;
 }
  
-switch(password_level){
-case 0:
-$("#pic0").fadeIn();
-$("#pic1").fadeOut();
-$("#pic2").fadeOut();
-$("#pic3").fadeOut();
-$("#pic4").fadeOut();
-break;
- 
-case 1:
-$("#pic0").fadeOut();
-$("#pic1").fadeIn();
-$("#pic2").fadeOut();
-$("#pic3").fadeOut();
-$("#pic4").fadeOut();
-break;
- 
-case 2:
-$("#pic0").fadeOut();
-$("#pic1").fadeOut();
-$("#pic2").fadeIn();
-$("#pic3").fadeOut();
-$("#pic4").fadeOut();
-break;
- 
-case 3:
-$("#pic0").fadeOut();
-$("#pic1").fadeOut();
-$("#pic2").fadeOut();
-$("#pic3").fadeIn();
-$("#pic4").fadeOut();
-break;
- 
-case 4:
-$("#pic0").fadeOut();
-$("#pic1").fadeOut();
-$("#pic2").fadeOut();
-$("#pic3").fadeOut();
-$("#pic4").fadeIn();
-break;
- 
-case 5:
-$("#pic0").fadeOut();
-$("#pic1").fadeOut();
-$("#pic2").fadeOut();
-$("#pic3").fadeOut();
-$("#pic4").fadeIn();
-break;
- 
-}
+toggleImg($(this).attr("id"), password_level);
  
 };//end trigger
  
+function toggleImg(field, level){
+	for(i = 0; i <= 5; i++){
+		if(i == level){
+			$("#" + field + "pic" + i).fadeIn();
+		}else{
+			$("#" + field + "pic" + i).fadeOut();
+		}
+	}
+}
+
 function getPasswordStrength(password){
 var score = 0;
  
@@ -102,13 +63,12 @@ position = $(this).position();
 input_height = $(this).outerHeight();
 input_width = $(this).outerWidth();
  
- 
 pic_width = (((input_height-6)/settings.height)*settings.width); //30 x 28
 pic_height = input_height - 6;
  
 properties = {
             position: 'absolute',
-display: 'none',
+						display: 'none',
             opacity: 1.0,
             left: (position.left + input_width - (pic_width+3)) + "px",
             top: (position.top + 3) + "px",
@@ -123,16 +83,12 @@ if($.browser.safari){
           }
  
  
+for(i = 0; i <= 5; i++){
+	$(this).after("<div style='display:none;' id='" + $(this).attr("id") + "pic" + i + "'><img src='" + settings.path + i + ".png' width='" + pic_width + "' height='" + pic_height + "px' /></div>");
+}
  
-$(this).after("<div id='pic0'><img src='" + settings.path + "0.png' width='" + pic_width + "' height='" + pic_height + "px' /></div>");
-$(this).after("<div id='pic1'><img src='" + settings.path + "1.png' width='" + pic_width + "' height='" + pic_height + "px' /></div>");
-$(this).after("<div id='pic2'><img src='" + settings.path + "2.png' width='" + pic_width + "' height='" + pic_height + "px' /></div>");
-$(this).after("<div id='pic3'><img src='" + settings.path + "3.png' width='" + pic_width + "' height='" + pic_height + "px' /></div>");
-$(this).after("<div id='pic4'><img src='" + settings.path + "4.png' width='" + pic_width + "' height='" + pic_height + "px' /></div>");
- 
- 
-for(i = 0; i < 5; i++){
-$("#pic" + i).css(properties);
+for(i = 0; i <= 5; i++){
+	$("#" + $(this).attr("id") + "pic" + i).css(properties);
 }
  
  
