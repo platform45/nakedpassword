@@ -85,12 +85,8 @@ if($.browser.safari){
  
 for(i = 0; i <= 5; i++){
 	$(this).after("<div style='display:none;' id='" + $(this).attr("id") + "pic" + i + "'><img src='" + settings.path + i + ".png' width='" + pic_width + "' height='" + pic_height + "px' /></div>");
-}
- 
-for(i = 0; i <= 5; i++){
 	$("#" + $(this).attr("id") + "pic" + i).css(properties);
 }
- 
  
 $(this).bind('keyup', trigger).bind('blur', trigger);
 });
