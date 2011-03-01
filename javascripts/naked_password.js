@@ -38,7 +38,11 @@ function toggleImg(field, level){
 
 function getPasswordStrength(password){
 var score = 0;
- 
+
+// Worst password ever.  No points!
+if (password.match(/password/) )
+{ return 0; }
+
 //if password bigger than 4 give 1 point
 if (password.length > 4) { score++; }
  
