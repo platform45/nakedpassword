@@ -51,7 +51,7 @@ if ( ( password.match(/\d+/) ) && ( password.match(/[\D+]/) ) ) { score++; }
 //if password has at least one special caracther give 1 point
 if ( password.match(/.[!,@,#,$,%,^,&,*,?,_,~,-,(,)]/) ) { score++; }
  
-//if password bigger than 12 give another 1 point
+//if password bigger than 12 give another 1 point (thanks reddit)
 if (password.length > 12) { score++; }
  
 return score;
