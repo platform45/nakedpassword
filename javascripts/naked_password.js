@@ -45,14 +45,14 @@ if (password.length > 4) { score++; }
 //if password has both lower and uppercase characters give 1 point
 if ( ( password.match(/[a-z]/) ) && ( password.match(/[A-Z]/) ) ) { score++; }
  
-//if password has at least one number give 1 point
-if (password.match(/\d+/)) { score++; }
+//if password has at least one number AND at least 1 other character give 1 point
+if ( ( password.match(/\d+/) ) && ( password.match(/[\D+]/) ) ) { score++; }
  
 //if password has at least one special caracther give 1 point
 if ( password.match(/.[!,@,#,$,%,^,&,*,?,_,~,-,(,)]/) ) { score++; }
  
 //if password bigger than 12 give another 1 point
-if (password.length > 8) { score++; }
+if (password.length > 12) { score++; }
  
 return score;
 }
