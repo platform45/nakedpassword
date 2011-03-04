@@ -1,5 +1,5 @@
 /*!
- * Naked Password Version 0.2.1
+ * Naked Password Version 0.2.2
  * http://www.nakedpassword.com
  *
  * Copyright 2010, Platform45
@@ -39,17 +39,17 @@ function toggleImg(field, level){
 function getPasswordStrength(password){
 var score = 0;
  
-//if password bigger than 4 give 1 point
-if (password.length > 4) { score++; }
+//if password bigger than 5 give 1 point
+if (password.length > 5) { score++; }
  
 //if password has both lower and uppercase characters give 1 point
 if ( ( password.match(/[a-z]/) ) && ( password.match(/[A-Z]/) ) ) { score++; }
  
 //if password has at least one number AND at least 1 other character give 1 point
-if ( ( password.match(/\d+/) ) && ( password.match(/[\D+]/) ) ) { score++; }
+if ( ( password.match(/\d+/) ) && ( password.match(/\D+/) ) ) { score++; }
  
-//if password has at least one special caracther give 1 point
-if ( password.match(/.[!,@,#,$,%,^,&,*,?,_,~,-,(,)]/) ) { score++; }
+//if password has a combination of other characters and special caracthers give 1 point
+if ( ( password.match(/[!,@,#,$,%,^,&,*,?,_,~,-,(,)]+/) ) && ( password.match(/\w+/) ) ) { score++; }
  
 //if password bigger than 12 give another 1 point (thanks reddit)
 if (password.length > 12) { score++; }
