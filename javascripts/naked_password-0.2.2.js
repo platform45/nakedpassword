@@ -18,7 +18,7 @@ jQuery.fn.nakedPassword = function(options){
 		function trigger(){
 			var password_level = getPasswordStrength($(this).val());
 			toggleImg($(this).attr("id"), password_level);
-		};
+		}
 
 		function toggleImg(field, level){
 			for(i = 0; i <= 5; i++){
@@ -53,10 +53,10 @@ jQuery.fn.nakedPassword = function(options){
 			properties =
 				{ position: 'absolute'
 				, display: 'none'
-				, opacity: 1.0
+				, opacity: 1
 				, left: (position.left + input_width - (pic_width+3)) + "px"
 				, top: (position.top + 3) + "px"
-				, margin: 0 + "px"
+				, margin: "0px"
 				, marginTop: ($.browser.safari ? 3 : 1) + "px"
 				};
 
