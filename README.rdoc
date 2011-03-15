@@ -12,3 +12,6 @@ Naked password assumes that the images are uploaded in a publicly accessible fol
   $("input:password").nakedPassword({path: "/new_image_path/"});
   
 And thats it! Feel free to fork a copy and push any changes to us, and we'll gladly implement them.
+
+== Thanks
+  * michaelficarra

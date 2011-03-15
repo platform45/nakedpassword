@@ -1,5 +1,5 @@
 /*!
- * Naked Password Version 0.2.2
+ * Naked Password Version 0.2.3
  * http://www.nakedpassword.com
  *
  * Copyright 2010, Platform45
