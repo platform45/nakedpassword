@@ -2,18 +2,21 @@
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<script src="../javascripts/jquery.js" type="text/javascript" charset="utf-8"></script>
-		<script src="../javascripts/naked_password-0.2.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../javascripts/naked_password-0.2.4.min.js" type="text/javascript" charset="utf-8"></script>
 		
 		<script type="text/javascript">
 			$(document).ready(function() {
-			      $("input:password").nakedPassword({path: "../images/"});
+			      $("input:password#test1").nakedPassword({path: "../images/", sex: "f"});
+			      $("input:password#test2").nakedPassword({path: "../images/", sex: "m"});
 			});
 		</script>
 		
 	</head>
 	<body>
-		<h1>Naked Password</h1>
-		<input type="password" id="test" style="font-size: 50px">
+	  <h1>Naked Password Female</h1>
+		<input type="password" id="test1" style="font-size: 50px">
+		<h1>Naked Password Male</h1>
+		<input type="password" id="test2" style="font-size: 50px">
 	</body>
 </html>
 

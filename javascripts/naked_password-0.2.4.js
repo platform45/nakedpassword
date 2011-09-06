@@ -12,6 +12,7 @@ jQuery.fn.nakedPassword = function(options){
 				{ path : "images/"
 				, width: 30
 				, height: 28
+				, sex: 'f'
 				},
 			settings = $.extend(defaults, options);
 
@@ -61,7 +62,7 @@ jQuery.fn.nakedPassword = function(options){
 				};
 
 		for(var i = 0; i <= 5; i++){
-			$(this).after("<div style='display:none;' id='" + $(this).attr("id") + "pic" + i + "'><img src='" + settings.path + i + ".png' width='" + pic_width + "' height='" + pic_height + "px' /></div>");
+			$(this).after("<div style='display:none;' id='" + $(this).attr("id") + "pic" + i + "'><img src='" + settings.path + settings.sex + i + ".png' width='" + pic_width + "' height='" + pic_height + "px' /></div>");
 			$("#" + $(this).attr("id") + "pic" + i).css(properties);
 		}
 

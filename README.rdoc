@@ -6,6 +6,15 @@ Simple jQuery plugin to improve security on passwords.
 Naked password is extremely easy to use. All thats needed is for you to attach nakedPassword(); to one or all of your password fields.
   
   $("input:password").nakedPassword();
+
+Naked password comes with two default sets of images (male and female).
+They are set using either an m or a f in front of the image name. These can be switched using the 'sex' variable.
+It defaults to 
+
+  $("input:password").nakedPassword({sex: "f"});
+
+  $("input:password").nakedPassword({sex: "m"});
+
   
 Naked password assumes that the images are uploaded in a publicly accessible folder called "images/". You can overwrite the images path as follows:
 
