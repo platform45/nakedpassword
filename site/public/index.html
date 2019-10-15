@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Naked Password - jQuery Plugin to Encourage Stronger Passwords</title>
+<link rel="stylesheet" href="css/reset.css" />
+<link rel="stylesheet" href="css/text.css" />
+<link rel="stylesheet" href="css/960.css" />
+<link rel="stylesheet" href="css/style.css?2" />
+
+<link href='http://fonts.googleapis.com/css?family=Press+Start+2P' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
+
+<script src="javascripts/jquery.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://github.com/platform45/nakedpassword/raw/0.2.4/javascripts/naked_password-0.2.4.min.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+<body>
+	
+	<script type="text/javascript">
+		$(document).ready(function() {
+		      $("input:password#test1").nakedPassword({path: "np_images/"});
+		      $("input:password#test2").nakedPassword({path: "np_images/", sex: "m"});
+		});
+	</script>
+	
+	<div class="header">
+	  <div id="wrapper" class="container_12">
+	    <img src="images/p45_logo.png">
+	    <a href="http://blog.platform45.com/" class="blog_link">Find more cool new stuff on our blog</a>
+	  </div>
+  </div>
+  <div id="wrapper" class="container_12">
+    <div id="logo" class="grid_4 alpha"></div>
+    <div class="demo grid_8 omega">
+	   <h1>Try it out!</h1>
+     <div class = "grid_4 alpha">
+     <h2>Sally</h2>
+			  <input type="password" id="test1" style="font-size: 25px;">
+			</div>
+	    <div class = "grid_4 omega">
+  	  <h2>David</h2>
+  	    <input type="password" id="test2" style="font-size: 25px;">
+  	  </div>
+  	</div>
+  
+    
+    <div id="main" class="grid_12">
+      <div id="buttons">
+        <a class="fatbtn" href="http://github.com/platform45/nakedpassword/zipball/master">
+          Download <span>Make your site sexy</span></a>
+        <a class="fatbtn" href="http://github.com/platform45/nakedpassword" target="_blank">
+          Fork It<span>Github Repository</span></a>
+      </div>
+
+      <h1>What is naked password?</h1>
+      <p class="larger">The whole idea of naked password is to encourage your users to enter stronger passwords.
+	 Our beautiful model Sally (or David) tastefully removes items of clothing as the password grows stronger.</p>
+	 
+
+	  
+      <h1>Usage</h1>
+      <p>Naked password is extremely easy to use. All thats needed is for you to attach nakedPassword(); to one or all of your password fields.</p>
+      <p class="code">
+        $("input:password").nakedPassword();
+      </p>
+      <p>Naked password comes with two image sets (male and female). It defaults to female but you can easily switch between them with the sex variable.</p>
+      <p class="code">
+        $("input:password").nakedPassword({sex: "f"}); OR $("input:password").nakedPassword({sex: "m"});
+      </p>
+      <p>Naked password assumes that the images are uploaded in a publicly accessible folder called "images/".<br/>
+	 			You can overwrite the images path as follows:</p>
+      <p class="code">
+        $("input:password").nakedPassword({path: "/new_image_path/"});
+      </p>
+      <p><strong>Note:</strong> If you want to use it on multiple fields on one page, make sure these fields have unique id's.</p>
+			<p><strong>And thats it! Feel free to fork a copy of our repo on github and push any changes to us, and we'll take a look!</strong></p>
+      
+	<div class="wild">
+      <h1>Featured on</h1>
+	</div>
+	
+	
+	<div class="news">
+	  <a href="http://laughingsquid.com/naked-password-encouraging-stronger-passwords-with-an-8-bit-striptease/" target="_blank" alt="LaughingSquid">
+    <img src="images/news_laughingsquid.png" width="138" height="138" alt="Laughingsquid"></a>
+        <a href="http://www.swiss-miss.com/2011/02/naked-password.html" targe="_blank" alt="Swiss Miss">
+    <img src="images/news_swissmiss.png" width="143" height="138" alt="Swissmiss"></a>
+    
+        <a href="http://www.reddit.com/r/programming/comments/ftor1/a_jquery_plugin_telling_how_strong_is_your/" targe="_blank" alt="Reddit">
+    <img src="images/news_reddit.png" width="198" height="137" alt="Reddit"></a>
+    
+        <a href="http://www.businessinsider.com/10-things-you-need-to-know-this-morning-sai-2011-2-28" targe="_blank" alt="Business Insider">
+    <img src="images/new_businessinsider.png" width="175" height="138" alt="Businessinsider"></a>
+    
+        <a href="http://www.geek.com/articles/geek-cetera/naked-password-encourages-strong-pwords-with-promise-of-nudity-20110228/" targe="_blank" alt="Geek.com">
+    <img src="images/new_geek.png" width="178" height="137" alt="Geek.com"></a>    
+  </div>
+  
+    </div>
+    
+    <div>
+      
+    </div>
+    
+    <div id="footer" class="grid_12">
+      Built by <a href="http://www.platform45.com">Platform45</a>	|	Follow us <a href="http://twitter.com/platform45">@platform45</a>	|	Licensed under <b>GPL</b> | <b>nakedpassword</b>.com
+    </div>
+  </div>
+
+	<script type="text/javascript">
+	var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+	document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+	</script>
+	<script type="text/javascript">
+	try {
+	var pageTracker = _gat._getTracker("UA-213964-18");
+	pageTracker._trackPageview();
+	} catch(err) {}</script>
+	
+	<script type="text/javascript">
+    var _gauges = _gauges || [];
+    (function() {
+      var t   = document.createElement('script');
+      t.type  = 'text/javascript';
+      t.async = true;
+      t.id    = 'gauges-tracker';
+      t.setAttribute('data-site-id', '4e709363613f5d1bbf000001');
+      t.src = '//secure.gaug.es/track.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(t, s);
+    })();
+  </script>
+	
+</body>
+</html>
